@@ -5,6 +5,7 @@ import Card from "../components/Card";
 import { NavLink, useLoaderData } from "react-router-dom";
 import PageTitle from "../components/PageTitle";
 import PageContent from "../layouts/PageContent";
+import Seo from "../components/Seo";
 
 export async function loader() {
   const bands = await getBands();
@@ -17,12 +18,16 @@ const Home = () => {
 
   return (
     <PageContent>
+      <Seo
+        title="Upcoming Shows"
+        description="Purchase concert tickets for upcoming shows"
+      />
       <section>
         <PageTitle title="Upcoming Shows" />
         <div className="flex flex-row flex-wrap justify-center items-stretch gap-4">
           {bands.map((band) => (
-            <NavLink className="flex" to={`/bands/${band.id}`}>
-              <Card key={band.id} band={band} />
+            <NavLink key={band.id} className="flex" to={`/bands/${band.id}`}>
+              <Card band={band} />
             </NavLink>
           ))}
         </div>

@@ -1,4 +1,8 @@
 export function formatDate(milliseconds) {
+  if (isNaN(milliseconds)) {
+    return "Invalid Date";
+  }
+
   const date = new Date(milliseconds);
 
   const options = {
@@ -13,5 +17,5 @@ export function formatDate(milliseconds) {
   const dateParts = formattedDate.split(", ");
   const dayOfWeek = dateParts[0];
   const monthAndDay = dateParts[1];
-  return `${dayOfWeek}, ${monthAndDay} `;
+  return `${dayOfWeek}, ${monthAndDay}`;
 }

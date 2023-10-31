@@ -4,10 +4,10 @@ import punkBand from "../band-json/punk-band.json";
 
 const bands = [skaBand, kpopBand, punkBand];
 
-export const getBandById = async (id) => {
+export async function getBandById(id) {
   return bands.find((band) => band.id === id);
-};
+}
 
-export const getBands = async () => {
+export async function getBands() {
   return bands;
-};
+}

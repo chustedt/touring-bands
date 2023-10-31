@@ -1,7 +1,5 @@
 import React from "react";
 import LazyImage from "../LazyImage";
-import { CalendarDays, MapPin } from "lucide-react";
-import { formatDate } from "../../utils/date-formatter";
 import BandDetails from "../BandDetails";
 
 const Card = ({ band }) => {
